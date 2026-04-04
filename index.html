@@ -3,83 +3,196 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CirroGuide</title>
+    <title>CirroGuide — Cloud Storage Cleanup &amp; Optimization</title>
     <meta
       name="description"
-      content="CirroGuide helps you understand, clean, and optimize cloud storage across Google Drive, Dropbox, and OneDrive."
+      content="CirroGuide helps you understand, clean, and optimize cloud storage across Google Drive, Dropbox, and OneDrive. Find duplicates, reclaim space, and take control."
     />
+    <meta property="og:title" content="CirroGuide — Cloud Storage Cleanup" />
+    <meta property="og:description" content="Understand, clean, and optimize your cloud storage across Google Drive, Dropbox, and OneDrive." />
+    <meta property="og:image" content="./icon-512.png" />
+    <meta property="og:type" content="website" />
+    <link rel="icon" type="image/png" href="./icon-512.png" />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
+
+    <!-- Navigation -->
+    <nav class="nav">
+      <div class="nav-inner">
+        <a href="./" class="nav-brand">
+          <img src="./icon-512.png" alt="CirroGuide icon" />
+          CirroGuide
+        </a>
+        <ul class="nav-links">
+          <li><a href="#features" class="hide-mobile">Features</a></li>
+          <li><a href="#how-it-works" class="hide-mobile">How it works</a></li>
+          <li><a href="#providers">Providers</a></li>
+          <li><a href="./privacy.html">Privacy</a></li>
+          <li><a href="mailto:support@cirroguide.com" class="button primary" style="min-height:38px; padding: 0 16px; font-size: 0.85rem;">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
     <main class="page">
-      <section class="hero card">
-        <p class="eyebrow">CirroGuide</p>
-        <h1>Your cloud cleanup home</h1>
+
+      <!-- Hero -->
+      <section class="hero card card-static">
+        <img src="./icon-512.png" alt="CirroGuide app icon" class="hero-icon" />
+        <p class="eyebrow">Cloud storage, simplified</p>
+        <h1>Take control of your<br/>cloud storage</h1>
         <p class="lede">
-          CirroGuide helps you understand, clean, and optimize cloud storage
-          across Google Drive, Dropbox, and OneDrive.
+          CirroGuide scans your Google Drive, Dropbox, and OneDrive to find duplicates,
+          surface forgotten files, and help you reclaim wasted space — all from one app.
         </p>
         <div class="hero-actions">
-          <a class="button primary" href="./privacy.html">Privacy policy</a>
-          <a class="button secondary" href="mailto:navneet.kumar1007@gmail.com"
-            >Contact support</a
-          >
+          <a class="button primary" href="#features">See what it does</a>
+          <a class="button secondary" href="mailto:support@cirroguide.com">Get in touch</a>
+        </div>
+        <div class="stats-bar">
+          <div class="stat">
+            <span class="stat-number">3</span>
+            <span class="stat-label">Cloud providers</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">1</span>
+            <span class="stat-label">Unified dashboard</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">0</span>
+            <span class="stat-label">Data sold</span>
+          </div>
         </div>
       </section>
 
-      <section class="grid">
-        <article class="card">
+      <!-- Features -->
+      <section id="features">
+        <div class="section-header">
           <h2>What CirroGuide does</h2>
-          <ul>
-            <li>Builds a storage summary across connected providers</li>
-            <li>Finds exact duplicate files and helps you reclaim space</li>
-            <li>Lets you preview files before cleanup</li>
-            <li>Tracks reclaimed space across your CirroGuide account</li>
-          </ul>
-        </article>
-
-        <article class="card">
-          <h2>Supported providers</h2>
-          <ul>
-            <li>Google Drive</li>
-            <li>Dropbox</li>
-            <li>OneDrive</li>
-          </ul>
-          <p class="muted">iCloud support is planned for a future update.</p>
-        </article>
+          <p>Everything you need to understand and optimize your cloud storage.</p>
+        </div>
+        <div class="three-up">
+          <article class="card feature-card">
+            <div class="feature-icon">&#9729;</div>
+            <h3>Storage overview</h3>
+            <p>See a unified summary of how your space is used across every connected cloud provider.</p>
+          </article>
+          <article class="card feature-card">
+            <div class="feature-icon">&#128269;</div>
+            <h3>Duplicate finder</h3>
+            <p>Detects exact duplicate files using content hashing — so you only keep what matters.</p>
+          </article>
+          <article class="card feature-card">
+            <div class="feature-icon">&#128065;</div>
+            <h3>Preview before you delete</h3>
+            <p>View any file before making cleanup decisions. No accidental deletions.</p>
+          </article>
+          <article class="card feature-card">
+            <div class="feature-icon">&#128202;</div>
+            <h3>Reclaimed space tracking</h3>
+            <p>Track exactly how much storage you've recovered across all your providers.</p>
+          </article>
+          <article class="card feature-card">
+            <div class="feature-icon">&#128274;</div>
+            <h3>Privacy-first</h3>
+            <p>Files stay on your device. No data sold. Scan results are never uploaded.</p>
+          </article>
+          <article class="card feature-card">
+            <div class="feature-icon">&#128241;</div>
+            <h3>Cross-platform</h3>
+            <p>Available on Android and iOS. Your cleanup progress syncs across devices.</p>
+          </article>
+        </div>
       </section>
 
-      <section class="card">
-        <h2>How CirroGuide handles data</h2>
-        <div class="two-up">
-          <div>
-            <h3>What syncs</h3>
-            <p>
-              CirroGuide account profile details, connected-provider summaries,
-              reclaimed-space totals, and lightweight dashboard metadata can be
-              synced to support cross-device restore.
-            </p>
+      <!-- How it works -->
+      <section id="how-it-works" style="margin-top: 40px;">
+        <div class="section-header">
+          <h2>How it works</h2>
+          <p>Three simple steps to a cleaner cloud.</p>
+        </div>
+        <div class="card card-static" style="display: flex; flex-direction: column; gap: 28px;">
+          <div class="step">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <h3>Connect your providers</h3>
+              <p>Sign in with Google Drive, Dropbox, or OneDrive. CirroGuide uses official OAuth — your password is never shared with us.</p>
+            </div>
           </div>
-          <div>
-            <h3>What stays local</h3>
-            <p>
-              Heavy duplicate scan state, preview files, temporary caches, and
-              local provider sessions stay on your device unless explicitly
-              reconnected.
-            </p>
+          <div class="step">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <h3>Scan your storage</h3>
+              <p>CirroGuide reads file metadata and creates content hashes to build your storage summary and identify duplicates.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <h3>Review and clean up</h3>
+              <p>Preview duplicates, choose what to keep, and reclaim space — all with full control and undo safety.</p>
+            </div>
           </div>
         </div>
       </section>
 
-      <section class="card">
-        <h2>Contact</h2>
-        <p>
-          Publisher: <strong>Navneet Kumar</strong><br />
-          Support: <a href="mailto:navneet.kumar1007@gmail.com"
-            >navneet.kumar1007@gmail.com</a
-          >
-        </p>
+      <!-- Providers -->
+      <section id="providers" style="margin-top: 40px;">
+        <div class="section-header">
+          <h2>Supported providers</h2>
+          <p>Connect the cloud services you already use.</p>
+        </div>
+        <div class="card card-static" style="text-align: center;">
+          <ul class="provider-list" style="justify-content: center;">
+            <li class="provider-pill"><span class="dot"></span> Google Drive</li>
+            <li class="provider-pill"><span class="dot"></span> Dropbox</li>
+            <li class="provider-pill"><span class="dot"></span> OneDrive</li>
+            <li class="provider-pill coming-soon"><span class="dot"></span> iCloud (coming soon)</li>
+          </ul>
+        </div>
       </section>
+
+      <!-- Data handling -->
+      <section style="margin-top: 40px;">
+        <div class="section-header">
+          <h2>Your data, your device</h2>
+          <p>CirroGuide is designed with privacy at its core.</p>
+        </div>
+        <div class="grid">
+          <article class="card card-static">
+            <h3>What syncs</h3>
+            <p class="muted">
+              Account profile, connected-provider summaries, reclaimed-space totals,
+              and lightweight dashboard metadata — to support cross-device restore.
+            </p>
+          </article>
+          <article class="card card-static">
+            <h3>What stays local</h3>
+            <p class="muted">
+              Duplicate scan results, file previews, temporary caches, and local
+              provider sessions — never leave your device.
+            </p>
+          </article>
+        </div>
+      </section>
+
     </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-inner">
+        <a href="./" class="footer-brand">
+          <img src="./icon-512.png" alt="CirroGuide" />
+          CirroGuide
+        </a>
+        <ul class="footer-links">
+          <li><a href="./privacy.html">Privacy Policy</a></li>
+          <li><a href="./terms.html">Terms of Service</a></li>
+          <li><a href="mailto:support@cirroguide.com">Support</a></li>
+        </ul>
+        <p class="footer-copy">&copy; 2026 Navneet Kumar. All rights reserved.</p>
+      </div>
+    </footer>
+
   </body>
 </html>
