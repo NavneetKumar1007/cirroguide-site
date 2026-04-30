@@ -1,198 +1,397 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CirroGuide — Cloud Storage Cleanup &amp; Optimization</title>
-    <meta
-      name="description"
-      content="CirroGuide helps you understand, clean, and optimize cloud storage across Google Drive, Dropbox, and OneDrive. Find duplicates, reclaim space, and take control."
-    />
-    <meta property="og:title" content="CirroGuide — Cloud Storage Cleanup" />
-    <meta property="og:description" content="Understand, clean, and optimize your cloud storage across Google Drive, Dropbox, and OneDrive." />
-    <meta property="og:image" content="./icon-512.png" />
-    <meta property="og:type" content="website" />
-    <link rel="icon" type="image/png" href="./icon-512.png" />
-    <link rel="stylesheet" href="./styles.css" />
-  </head>
-  <body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CirroGuide — Free up space. You choose what stays.</title>
+  <meta name="description" content="See what's taking space on your phone and cloud — clean it all in one place. Nothing leaves without your tap." />
+  <meta name="theme-color" content="#0B1220" />
 
-    <!-- Navigation -->
-    <nav class="nav">
-      <div class="nav-inner">
-        <a href="./" class="nav-brand">
-          <img src="./icon-512.png" alt="CirroGuide icon" />
-          CirroGuide
-        </a>
-        <ul class="nav-links">
-          <li><a href="#features" class="hide-mobile">Features</a></li>
-          <li><a href="#how-it-works" class="hide-mobile">How it works</a></li>
-          <li><a href="#providers">Providers</a></li>
-          <li><a href="./privacy.html">Privacy</a></li>
-          <li><a href="mailto:support@cirroguide.com" class="button primary" style="min-height:38px; padding: 0 16px; font-size: 0.85rem;">Contact</a></li>
+  <!-- Open Graph -->
+  <meta property="og:title" content="CirroGuide — Free up space. You choose what stays." />
+  <meta property="og:description" content="See what's taking space on your phone and cloud — clean it all in one place. Nothing leaves without your tap." />
+  <meta property="og:image" content="https://www.cirroguide.com/icon-512.png?v=2" />
+  <meta property="og:url" content="https://www.cirroguide.com/" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" type="image/png" href="./icon-512.png?v=2" />
+  <link rel="apple-touch-icon" href="./apple-touch-icon.png?v=2" />
+
+  <!-- Fonts: Inter only, with system fallback -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
+
+  <link rel="stylesheet" href="./styles.css" />
+  <link rel="preload" as="image" href="./assets/screens/03_ios_review_clean.png" />
+</head>
+<body>
+
+  <!-- ============== NAV ============== -->
+  <header class="nav">
+    <div class="container nav__inner">
+      <a href="./" class="nav__brand" aria-label="CirroGuide home">
+        <img src="./icon-512.png?v=2" alt="" />
+        CirroGuide
+      </a>
+      <nav aria-label="Primary">
+        <ul class="nav__links">
+          <li><a href="#how" class="hide-mobile">How it works</a></li>
+          <li><a href="#features" class="hide-mobile">What it finds</a></li>
+          <li><a href="#wontdo" class="hide-mobile">What we won't do</a></li>
+          <li><a href="#download" class="btn btn--primary nav__cta">Free up space</a></li>
         </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============== §1 HERO ============== -->
+    <section class="section hero">
+      <div class="container hero__grid">
+        <div class="hero__copy">
+          <div class="eyebrow">When your phone says “Storage Almost Full”</div>
+          <h1>Free up space.<br />You choose what stays.</h1>
+          <p class="hero__sub">See what's taking space on your phone and cloud — clean it all in one place. Nothing leaves without your tap.</p>
+          <div class="hero__cta">
+            <a href="#download" class="btn btn--primary">Free up space now</a>
+            <a href="#how" class="btn btn--ghost">See it in action (45s)</a>
+          </div>
+          <p class="hero__micro">3-month free trial · No auto-delete · Files never leave your accounts</p>
+        </div>
+
+        <div class="phones" aria-hidden="true">
+          <div class="phone phone--lift">
+            <img src="./assets/screens/01_home_scanning.png" alt="" loading="eager" decoding="async" />
+          </div>
+          <div class="phone phone--lift2">
+            <img src="./assets/screens/03_ios_review_clean.png" alt="" loading="eager" decoding="async" />
+          </div>
+          <div class="phone phone--lift">
+            <img src="./assets/screens/04_ios_confirm_trash.png" alt="" loading="lazy" decoding="async" />
+          </div>
+        </div>
       </div>
-    </nav>
+    </section>
 
-    <main class="page">
+    <!-- ============== §2 PROBLEM MIRROR ============== -->
+    <section class="section section--tint problem">
+      <div class="container read">
+        <div class="eyebrow">If any of this sounds familiar</div>
+        <h2>You've tried to clean up. It didn't stick.</h2>
+        <ul>
+          <li>You delete a few photos every month, but the warning comes back.</li>
+          <li>You bought more iCloud or Google storage just to make it stop.</li>
+          <li>You don't trust apps that promise to “clean up” for you.</li>
+          <li>You don't know what's actually safe to delete.</li>
+        </ul>
+        <p class="lede" style="margin-top: var(--s-8);">CirroGuide doesn't decide for you. It shows you what's taking space — and waits for your tap.</p>
+      </div>
+    </section>
 
-      <!-- Hero -->
-      <section class="hero card card-static">
-        <img src="./icon-512.png" alt="CirroGuide app icon" class="hero-icon" />
-        <p class="eyebrow">Cloud storage, simplified</p>
-        <h1>Take control of your<br/>cloud storage</h1>
-        <p class="lede">
-          CirroGuide scans your Google Drive, Dropbox, and OneDrive to find duplicates,
-          surface forgotten files, and help you reclaim wasted space — all from one app.
-        </p>
-        <div class="hero-actions">
-          <a class="button primary" href="#features">See what it does</a>
-          <a class="button secondary" href="mailto:support@cirroguide.com">Get in touch</a>
-        </div>
-        <div class="stats-bar">
-          <div class="stat">
-            <span class="stat-number">3</span>
-            <span class="stat-label">Cloud providers</span>
-          </div>
-          <div class="stat">
-            <span class="stat-number">1</span>
-            <span class="stat-label">Unified dashboard</span>
-          </div>
-          <div class="stat">
-            <span class="stat-number">0</span>
-            <span class="stat-label">Data sold</span>
-          </div>
-        </div>
-      </section>
-
-      <!-- Features -->
-      <section id="features">
-        <div class="section-header">
-          <h2>What CirroGuide does</h2>
-          <p>Everything you need to understand and optimize your cloud storage.</p>
-        </div>
-        <div class="three-up">
-          <article class="card feature-card">
-            <div class="feature-icon">&#9729;</div>
-            <h3>Storage overview</h3>
-            <p>See a unified summary of how your space is used across every connected cloud provider.</p>
-          </article>
-          <article class="card feature-card">
-            <div class="feature-icon">&#128269;</div>
-            <h3>Duplicate finder</h3>
-            <p>Detects exact duplicate files using content hashing — so you only keep what matters.</p>
-          </article>
-          <article class="card feature-card">
-            <div class="feature-icon">&#128065;</div>
-            <h3>Preview before you delete</h3>
-            <p>View any file before making cleanup decisions. No accidental deletions.</p>
-          </article>
-          <article class="card feature-card">
-            <div class="feature-icon">&#128202;</div>
-            <h3>Reclaimed space tracking</h3>
-            <p>Track exactly how much storage you've recovered across all your providers.</p>
-          </article>
-          <article class="card feature-card">
-            <div class="feature-icon">&#128274;</div>
-            <h3>Privacy-first</h3>
-            <p>Files stay on your device. No data sold. Scan results are never uploaded.</p>
-          </article>
-          <article class="card feature-card">
-            <div class="feature-icon">&#128241;</div>
-            <h3>Cross-platform</h3>
-            <p>Available on Android and iOS. Your cleanup progress syncs across devices.</p>
-          </article>
-        </div>
-      </section>
-
-      <!-- How it works -->
-      <section id="how-it-works" style="margin-top: 40px;">
-        <div class="section-header">
-          <h2>How it works</h2>
-          <p>Three simple steps to a cleaner cloud.</p>
-        </div>
-        <div class="card card-static" style="display: flex; flex-direction: column; gap: 28px;">
-          <div class="step">
-            <div class="step-number">1</div>
-            <div class="step-content">
-              <h3>Connect your providers</h3>
-              <p>Sign in with Google Drive, Dropbox, or OneDrive. CirroGuide uses official OAuth — your password is never shared with us.</p>
-            </div>
-          </div>
-          <div class="step">
-            <div class="step-number">2</div>
-            <div class="step-content">
-              <h3>Scan your storage</h3>
-              <p>CirroGuide reads file metadata and creates content hashes to build your storage summary and identify duplicates.</p>
-            </div>
-          </div>
-          <div class="step">
-            <div class="step-number">3</div>
-            <div class="step-content">
-              <h3>Review and clean up</h3>
-              <p>Preview duplicates, choose what to keep, and reclaim space — all with full control and undo safety.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Providers -->
-      <section id="providers" style="margin-top: 40px;">
-        <div class="section-header">
-          <h2>Supported providers</h2>
-          <p>Connect the cloud services you already use.</p>
-        </div>
-        <div class="card card-static" style="text-align: center;">
-          <ul class="provider-list" style="justify-content: center;">
-            <li class="provider-pill"><span class="dot"></span> Google Drive</li>
-            <li class="provider-pill"><span class="dot"></span> Dropbox</li>
-            <li class="provider-pill"><span class="dot"></span> OneDrive</li>
-            <li class="provider-pill coming-soon"><span class="dot"></span> iCloud (coming soon)</li>
+    <!-- ============== §3 PROMISE (DARK) ============== -->
+    <section class="section section--dark promise">
+      <div class="container promise__grid">
+        <div>
+          <div class="eyebrow" style="color: rgba(255,255,255,.6);">The promise</div>
+          <h2>Nothing is deleted <span class="accent">without your tap.</span></h2>
+          <p class="lede" style="color: rgba(255,255,255,.75);">CirroGuide finds what's taking space — duplicates, old screenshots, large videos, blurry shots — and shows you. You decide what goes. Every time.</p>
+          <ul class="promise__list">
+            <li>No auto-delete. Ever.</li>
+            <li>Your files never leave your accounts for scanning.</li>
+            <li>Removed items go to your provider's trash — restorable.</li>
+            <li>You stay in control. Every time.</li>
           </ul>
         </div>
-      </section>
-
-      <!-- Data handling -->
-      <section style="margin-top: 40px;">
-        <div class="section-header">
-          <h2>Your data, your device</h2>
-          <p>CirroGuide is designed with privacy at its core.</p>
+        <div class="phones" aria-hidden="true" style="grid-template-columns: 1fr 1fr;">
+          <div class="phone">
+            <img src="./assets/screens/03_ios_review_clean.png" alt="" loading="lazy" decoding="async" />
+          </div>
+          <div class="phone phone--lift">
+            <img src="./assets/screens/04_ios_confirm_trash.png" alt="" loading="lazy" decoding="async" />
+          </div>
         </div>
-        <div class="grid">
-          <article class="card card-static">
-            <h3>What syncs</h3>
-            <p class="muted">
-              Account profile, connected-provider summaries, reclaimed-space totals,
-              and lightweight dashboard metadata — to support cross-device restore.
-            </p>
-          </article>
-          <article class="card card-static">
-            <h3>What stays local</h3>
-            <p class="muted">
-              Duplicate scan results, file previews, temporary caches, and local
-              provider sessions — never leave your device.
-            </p>
-          </article>
+      </div>
+    </section>
+
+    <!-- ============== §4 HOW IT WORKS ============== -->
+    <section class="section" id="how">
+      <div class="container">
+        <div class="read">
+          <div class="eyebrow">How it works</div>
+          <h2>Three steps. You're in control on every one.</h2>
         </div>
-      </section>
+        <ol class="steps" style="list-style: none; padding: 0;">
+          <li class="step">
+            <div class="step__num">01 — SCAN</div>
+            <h3>Connect your phone and clouds.</h3>
+            <p>Sign in to your phone's photo library and any cloud you use — Google Drive, iCloud, Dropbox, OneDrive. We index file names, sizes, and types only.</p>
+          </li>
+          <li class="step">
+            <div class="step__num">02 — REVIEW</div>
+            <h3>See what's taking space.</h3>
+            <p>Duplicates, large videos, blurry photos, old screenshots — grouped, previewable, and totaled. Nothing runs automatically.</p>
+          </li>
+          <li class="step">
+            <div class="step__num">03 — CLEAN</div>
+            <h3>Tap to remove. Restore anytime.</h3>
+            <p>You select. You confirm. Items go to your provider's trash, where you can restore them. You chose what to remove.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
 
-    </main>
+    <!-- ============== §5 WHAT IT FINDS ============== -->
+    <section class="section section--tint" id="features">
+      <div class="container">
+        <div class="read">
+          <div class="eyebrow">What it finds</div>
+          <h2>The clutter you didn't know you had.</h2>
+          <p class="lede">CirroGuide looks across your phone and every connected cloud at once.</p>
+        </div>
+        <div class="features">
+          <div class="feature">
+            <div class="feature__icon" aria-hidden="true">⧉</div>
+            <h3>Identical duplicates</h3>
+            <p>The exact same file, saved in two places. Hundreds of groups, often gigabytes. You pick which copy stays.</p>
+          </div>
+          <div class="feature">
+            <div class="feature__icon" aria-hidden="true">▶</div>
+            <h3>Large videos &amp; files</h3>
+            <p>The 75 biggest things on your phone or in your cloud, sorted by size. Most are years old.</p>
+          </div>
+          <div class="feature">
+            <div class="feature__icon" aria-hidden="true">◐</div>
+            <h3>Blurry photos</h3>
+            <p>Out-of-focus shots and accidental captures. We surface them — you decide.</p>
+          </div>
+          <div class="feature">
+            <div class="feature__icon" aria-hidden="true">▭</div>
+            <h3>Old screenshots</h3>
+            <p>Receipts, memes, code snippets you never went back to. Easy to clear, easy to keep.</p>
+          </div>
+          <div class="feature">
+            <div class="feature__icon" aria-hidden="true">◇</div>
+            <h3>Empty folders</h3>
+            <p>Cloud drives collect empty folders over years. We list them in one tap.</p>
+          </div>
+          <div class="feature">
+            <div class="feature__icon" aria-hidden="true">◯</div>
+            <h3>Unused for a year</h3>
+            <p>Files you haven't opened in twelve months. Surfaced, not deleted. You stay in control.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="footer-inner">
-        <a href="./" class="footer-brand">
-          <img src="./icon-512.png" alt="CirroGuide" />
+    <!-- ============== §6 ONE PLACE ============== -->
+    <section class="section" id="oneplace">
+      <div class="container oneplace__grid">
+        <div>
+          <div class="eyebrow">Phone + cloud, together</div>
+          <h2>One place to clean it all.</h2>
+          <p class="lede">Most cleanup apps look at your phone. Most cloud apps make you open a different tab. CirroGuide shows your phone storage and every cloud you use side by side — so you see the full picture, and clean it once.</p>
+          <ul class="providers" aria-label="Supported providers">
+            <li>📱 iPhone &amp; Android</li>
+            <li>Google Drive</li>
+            <li>iCloud</li>
+            <li>Dropbox</li>
+            <li>OneDrive</li>
+          </ul>
+        </div>
+        <div class="phone" style="max-width: 360px; margin: 0 auto;">
+          <img src="./assets/screens/06_ios_large_files.png" alt="CirroGuide showing large files across Google Drive and other sources" loading="lazy" decoding="async" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== §6.6 MORE THAN A CLEANER ============== -->
+    <section class="section section--tint">
+      <div class="container">
+        <div class="read">
+          <div class="eyebrow">More than a cleaner</div>
+          <h2>Clean is just the start.</h2>
+          <p class="lede">Once your space is clear, CirroGuide lets you move files between clouds and organize what stays — without touching a laptop. Included free for 3 months, then Premium.</p>
+        </div>
+        <div class="morethan__grid">
+          <div class="morethan__card">
+            <div class="badge--premium">★ Premium</div>
+            <h3>Move</h3>
+            <p>Transfer files between clouds — or between your phone and any cloud — without re-uploading. Google Drive full? Shift a year of videos to OneDrive in a tap. Photos → Google Drive, Google Drive → Phone, any direction.</p>
+            <div class="morethan__phone" aria-hidden="true">
+              <img src="./assets/screens/07_ios_move_wizard.png" alt="" loading="lazy" decoding="async" />
+            </div>
+          </div>
+          <div class="morethan__card">
+            <div class="badge--premium">★ Premium</div>
+            <h3>Organize</h3>
+            <p>Sort your cloud into folders that actually make sense. Auto-group by year, by month, or by file type — then preview the exact folder structure before anything moves. One tap to apply across all your clouds.</p>
+            <div class="morethan__phone" aria-hidden="true">
+              <img src="./assets/screens/09_ios_organize_detail.png" alt="" loading="lazy" decoding="async" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== §6.5 BEFORE / AFTER ============== -->
+    <section class="section section--tint">
+      <div class="container">
+        <div class="read">
+          <div class="eyebrow">A real scan</div>
+          <h2>What it actually finds, on a real phone.</h2>
+          <p class="lede">A first scan typically surfaces tens of gigabytes of clutter — duplicates, videos you forgot, screenshots from 2019. You'll see numbers like these.</p>
+        </div>
+        <div class="compare">
+          <div class="compare__card compare__card--before">
+            <div class="compare__label">Before</div>
+            <div class="compare__big">120.3 GB</div>
+            <p>Used out of 205.8 GB across phone + cloud</p>
+          </div>
+          <div class="compare__card compare__card--after">
+            <div class="compare__label">CirroGuide finds</div>
+            <div class="compare__big">86.2 GB</div>
+            <p>Of clutter you can review and free in one place</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== §7 WHAT WE WON'T DO ============== -->
+    <section class="section" id="wontdo">
+      <div class="container">
+        <div class="read">
+          <div class="eyebrow">What we won't do</div>
+          <h2>The things you should expect from a tool that touches your files.</h2>
+        </div>
+        <div class="wontdo">
+          <div class="wontdo__row">
+            <span class="wontdo__mark wontdo__mark--check" aria-hidden="true">✓</span>
+            <div><strong>Nothing deletes without your explicit tap.</strong> Every removal is a confirmed action. No “smart cleanup,” no auto-runs, no surprises.</div>
+          </div>
+          <div class="wontdo__row">
+            <span class="wontdo__mark wontdo__mark--check" aria-hidden="true">✓</span>
+            <div><strong>Files never leave your accounts.</strong> We index metadata locally. Your photos and documents stay where they live.</div>
+          </div>
+          <div class="wontdo__row">
+            <span class="wontdo__mark wontdo__mark--check" aria-hidden="true">✓</span>
+            <div><strong>Removed items go to your provider's trash.</strong> Google Drive, iCloud, Dropbox — they all keep deleted items for ~30 days. You can restore them.</div>
+          </div>
+          <div class="wontdo__row">
+            <span class="wontdo__mark wontdo__mark--cross" aria-hidden="true">✕</span>
+            <div><strong>We don't sell your data. Ever.</strong> Not to advertisers, not to AI training, not to anyone. We make money from Premium subscriptions — that's it. No ads.</div>
+          </div>
+          <div class="wontdo__row">
+            <span class="wontdo__mark wontdo__mark--cross" aria-hidden="true">✕</span>
+            <div><strong>We don't decide what you keep.</strong> We surface what looks like clutter. You judge. That's the entire product.</div>
+          </div>
+        </div>
+
+        <div class="reinforce">
+          <strong>The whole product fits in one sentence:</strong>
+          we show you what's taking space, you tap what goes, your provider holds the trash for 30 days. Nothing runs automatically.
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== §8 FAQ ============== -->
+    <section class="section section--tint">
+      <div class="container">
+        <div class="read">
+          <div class="eyebrow">Questions</div>
+          <h2>Frequently asked.</h2>
+        </div>
+        <div class="faq">
+          <details>
+            <summary>Does CirroGuide upload my photos or files?</summary>
+            <div class="faq__answer">
+              <p>No. We read file names, sizes, dates, and content hashes only — locally on your device. Your photos and documents never leave your phone or your cloud accounts for our servers.</p>
+            </div>
+          </details>
+          <details>
+            <summary>What happens when I tap “Free up space”?</summary>
+            <div class="faq__answer">
+              <p>We move the items you selected to your provider's trash — Google Drive trash, iCloud Recently Deleted, Dropbox deleted files. You confirm before anything moves. You can restore items from your provider's trash for about 30 days.</p>
+            </div>
+          </details>
+          <details>
+            <summary>Is it free? What's included in the trial?</summary>
+            <div class="faq__answer">
+              <p>CirroGuide is free to install and includes a <strong>3-month trial with full access to everything</strong> — Clean, Organize, and Move. After the trial, cleanup, organize, and move features require a Premium plan. No ads — ever.</p>
+            </div>
+          </details>
+          <details>
+            <summary>I have a question that's not here.</summary>
+            <div class="faq__answer">
+              <p>Email us at <a href="mailto:support@cirroguide.com">support@cirroguide.com</a>. A real person reads every message — usually replies within a day.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== FINAL CTA ============== -->
+    <section class="finalcta" id="download">
+      <div class="container">
+        <div class="eyebrow">Ready when you are</div>
+        <h2>Free up space. You choose what stays.</h2>
+        <p class="lede" style="max-width: 560px; margin: 0 auto;">Install CirroGuide, connect your phone and clouds, see what you can clean — in five minutes.</p>
+        <div class="finalcta__buttons">
+          <a href="#" class="btn btn--primary" aria-label="Get it on the App Store">Get it on the App Store</a>
+          <a href="#" class="btn btn--ghost" aria-label="Get it on Google Play">Get it on Google Play</a>
+        </div>
+        <p class="finalcta__micro">3-month free trial · No auto-delete · No ads · Questions? <a href="mailto:support@cirroguide.com">support@cirroguide.com</a></p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============== FOOTER ============== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <a href="./" class="footer__brand">
+          <img src="./icon-512.png?v=2" alt="" />
           CirroGuide
         </a>
-        <ul class="footer-links">
-          <li><a href="./privacy.html">Privacy Policy</a></li>
-          <li><a href="./terms.html">Terms of Service</a></li>
-          <li><a href="mailto:support@cirroguide.com">Support</a></li>
+        <ul class="footer__links">
+          <li><a href="#how">How it works</a></li>
+          <li><a href="#features">What it finds</a></li>
+          <li><a href="#wontdo">What we won't do</a></li>
+          <li><a href="./privacy.html">Privacy</a></li>
+          <li><a href="./terms.html">Terms</a></li>
+          <li><a href="./delete-account.html">Delete account</a></li>
+          <li><a href="mailto:support@cirroguide.com">Contact</a></li>
         </ul>
-        <p class="footer-copy">&copy; 2026 Navneet Kumar. All rights reserved.</p>
       </div>
-    </footer>
+      <div class="footer__bottom">
+        <span>© <span id="year">2026</span> CirroGuide. All rights reserved.</span>
+        <span>Made with care. Nothing runs automatically.</span>
+      </div>
+    </div>
+  </footer>
 
-  </body>
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Fade-in on scroll (respects prefers-reduced-motion via CSS)
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.classList.add('in');
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      document.querySelectorAll('.section, .step, .feature, .compare__card').forEach(el => {
+        el.classList.add('fade-in');
+        io.observe(el);
+      });
+    }
+  </script>
+</body>
 </html>
