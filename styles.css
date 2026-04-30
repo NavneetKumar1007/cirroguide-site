@@ -657,12 +657,15 @@ p  { margin: 0 0 var(--s-4); }
   .oneplace__phone {
     max-width: none;
     width: auto;
-    height: 220px;                       /* ≈ 102px wide @ 9:19.5 */
-    max-height: 220px;
+    height: 180px;                       /* was 220px — further reduced */
+    max-height: 180px;
     aspect-ratio: 9 / 19.5;
     margin: var(--s-4) auto 0;
-    border-radius: 20px;
+    border-radius: 16px;
   }
+
+  /* Hide third hero phone on mobile — 2 is enough */
+  .phone--mobile-hide { display: none; }
 
   /* Nav: hide ghost CTA height bump, keep brand + primary CTA */
   .nav__cta { height: 36px; padding: 0 var(--s-3); font-size: 13px; }
