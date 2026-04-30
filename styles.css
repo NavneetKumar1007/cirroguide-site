@@ -566,3 +566,130 @@ p  { margin: 0 0 var(--s-4); }
 .prose a { color: var(--green-700); text-decoration: underline; text-underline-offset: 2px; }
 .prose a:hover { color: var(--green-600); }
 .prose strong { color: var(--ink-900); font-weight: 600; }
+
+/* ---------- 21. Mobile-first refinements (≤640px) ---------- */
+/* Tailwind-equivalent comments shown beside each rule for mapping. */
+
+/* Sticky bottom CTA (mobile only) ~ Tailwind: fixed bottom-4 inset-x-4 h-12 rounded-full bg-emerald-600 text-white shadow-lg z-50 hidden md:hidden */
+.sticky-cta {
+  display: none;
+  position: fixed;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  height: 52px;                       /* min 48px tap target ~ h-12+ */
+  border-radius: 999px;
+  background: var(--green-600);
+  color: #fff;
+  font-weight: 600;
+  font-size: 16px;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 8px 24px rgba(11,18,32,.18), 0 2px 6px rgba(11,18,32,.08);
+  z-index: 50;
+  padding: 0 var(--s-6);
+}
+.sticky-cta:hover { background: var(--green-700); color: #fff; }
+
+@media (max-width: 640px) {
+  /* Show sticky CTA, leave bottom space so footer isn't covered ~ pb-24 on body */
+  .sticky-cta { display: inline-flex; }
+  body { padding-bottom: 88px; }
+
+  /* Container narrower + tighter side padding ~ max-w-[640px] px-4 */
+  .container { padding: 0 var(--s-4); max-width: 640px; }
+
+  /* Section vertical rhythm ~ py-12 (was py-16) */
+  .section { padding: var(--s-12) 0; }
+  .finalcta { padding: var(--s-12) 0; }
+  .footer { padding: var(--s-8) 0; }
+
+  /* Type scale tightened ~ text-3xl, leading-tight */
+  h1 { font-size: clamp(32px, 9vw, 40px); }
+  h2 { font-size: clamp(24px, 6.5vw, 30px); }
+  .lede, .hero__sub { font-size: 16px; }
+
+  /* HERO: single column, text → CTA → ONE phone, reduced height */
+  .hero { padding-top: var(--s-8); padding-bottom: var(--s-8); }
+  .hero__grid { gap: var(--s-6); }                    /* ~ gap-6 */
+  .hero__cta { flex-direction: column; gap: var(--s-2); }
+  .hero__cta .btn { width: 100%; }                    /* ~ w-full */
+  .btn { height: 48px; }                              /* ~ h-12 */
+
+  /* Hide secondary phones in hero — show only the primary one */
+  .phone--secondary { display: none; }
+  .phones { grid-template-columns: 1fr; gap: 0; max-width: 220px; margin: 0 auto; }
+  .phone--primary { transform: none; }
+
+  /* Nav: hide ghost CTA height bump, keep brand + primary CTA */
+  .nav__cta { height: 36px; padding: 0 var(--s-3); font-size: 13px; }
+
+  /* Generic CARD spacing ~ p-4 rounded-xl */
+  .step, .feature, .compare__card, .morethan__card,
+  .oneplace__panel, .reinforce {
+    padding: var(--s-4);
+  }
+
+  /* §3 Promise: tighter dark band */
+  .promise__grid { gap: var(--s-6); }
+  .promise__list { margin-top: var(--s-4); }
+
+  /* §4 Steps: vertical, tight */
+  .steps { gap: var(--s-3); margin-top: var(--s-6); }
+
+  /* §5 Features grid: 2-per-row on phones (was 1-col on small screens) */
+  .features { grid-template-columns: repeat(2, 1fr); gap: var(--s-3); margin-top: var(--s-6); }
+  .feature { padding: var(--s-4); gap: var(--s-2); }
+  .feature h3 { font-size: 15px; }
+  .feature p  { font-size: 13px; line-height: 1.45; }
+  .feature__icon { width: 32px; height: 32px; }
+
+  /* §6.5 Before/After: stack vertically (already 1-col here, just reduce padding) */
+  .compare { gap: var(--s-3); margin-top: var(--s-6); }
+  .compare__big { font-size: 40px; }
+
+  /* §6.6 Move + Organize: image ABOVE text, smaller */
+  .morethan__grid { gap: var(--s-4); margin-top: var(--s-6); }
+  .morethan__card {
+    grid-template-columns: 1fr;       /* stack */
+    gap: var(--s-3);
+    padding: var(--s-4);
+    text-align: left;
+  }
+  .morethan__phone {
+    width: 64px;                      /* small, supportive */
+    border-radius: 10px;
+  }
+  .morethan__body h3 { font-size: 17px; }
+  .morethan__body p  { font-size: 14px; line-height: 1.5; }
+
+  /* §7 Won't-do: tighter rows */
+  .wontdo__row { padding: var(--s-3) 0; gap: var(--s-2); }
+  .reinforce { margin-top: var(--s-6); padding: var(--s-4); }
+
+  /* §8 FAQ: bigger tap targets, tighter spacing */
+  .faq { margin-top: var(--s-6); }
+  .faq details { padding: var(--s-3) 0; }
+  .faq summary {
+    min-height: 48px;                 /* ~ h-12 tap target */
+    padding: var(--s-2) 0;
+    font-size: 16px;
+  }
+  .faq__answer { padding-top: var(--s-2); font-size: 15px; }
+
+  /* §9 Final CTA: full-width buttons, stacked */
+  .finalcta__buttons { flex-direction: column; gap: var(--s-2); margin: var(--s-4) 0 var(--s-3); }
+  .finalcta__buttons .btn { width: 100%; }
+
+  /* Footer compact */
+  .footer__top { gap: var(--s-4); margin-bottom: var(--s-4); padding-bottom: var(--s-4); }
+  .footer__links { gap: var(--s-3); font-size: 14px; }
+  .footer__bottom { font-size: 13px; }
+}
+
+/* Hide sticky CTA when user reaches the actual download section / final CTA region.
+   Pure CSS fallback isn't easily possible; keep simple — desktop never shows it. */
+@media (min-width: 641px) {
+  .sticky-cta { display: none !important; }
+}

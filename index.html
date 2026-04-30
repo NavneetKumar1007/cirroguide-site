@@ -62,13 +62,13 @@
         </div>
 
         <div class="phones" aria-hidden="true">
-          <div class="phone phone--lift">
+          <div class="phone phone--lift phone--primary">
             <img src="./assets/screens/01_home_scanning.png" alt="" loading="eager" decoding="async" />
           </div>
-          <div class="phone phone--lift2">
+          <div class="phone phone--lift2 phone--secondary">
             <img src="./assets/screens/03_ios_review_clean.png" alt="" loading="eager" decoding="async" />
           </div>
-          <div class="phone phone--lift">
+          <div class="phone phone--lift phone--secondary">
             <img src="./assets/screens/04_ios_confirm_trash.png" alt="" loading="lazy" decoding="async" />
           </div>
         </div>
@@ -245,7 +245,7 @@
             </div>
             <div class="morethan__body">
               <h3>Move files without re-uploading.</h3>
-              <p>Move files between your phone and cloud — or across clouds — without downloading and uploading again. Free up space instantly. <em class="muted">Premium.</em></p>
+              <p>Move files between your phone and cloud — or across clouds — without downloading and uploading again. <em class="muted">Premium.</em></p>
             </div>
           </article>
 
@@ -255,7 +255,7 @@
             </div>
             <div class="morethan__body">
               <h3>Automatically organize your storage.</h3>
-              <p>Sort your files by year, month, or type. Preview the structure first, then apply in one tap. <em class="muted">Premium.</em></p>
+              <p>Sort your files by year, month, or type. Preview, then apply in one tap. <em class="muted">Premium.</em></p>
             </div>
           </article>
 
@@ -377,6 +377,9 @@
     </div>
   </footer>
 
+  <!-- Sticky mobile CTA -->
+  <a href="#download" class="sticky-cta">Free up space</a>
+
   <script>
     // Year
     document.getElementById('year').textContent = new Date().getFullYear();
@@ -396,6 +399,21 @@
         io.observe(el);
       });
     }
+
+    // Hide sticky mobile CTA when the final CTA section or footer is visible
+    (function () {
+      var sticky = document.querySelector('.sticky-cta');
+      var anchors = document.querySelectorAll('.finalcta, .footer');
+      if (!sticky || !anchors.length || !('IntersectionObserver' in window)) return;
+      var visible = 0;
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) { visible += e.isIntersecting ? 1 : -1; });
+        sticky.style.opacity = visible > 0 ? '0' : '1';
+        sticky.style.pointerEvents = visible > 0 ? 'none' : 'auto';
+      }, { threshold: 0.05 });
+      anchors.forEach(function (a) { obs.observe(a); });
+      sticky.style.transition = 'opacity 200ms ease';
+    })();
   </script>
 </body>
 </html>
