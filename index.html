@@ -38,8 +38,7 @@
       <nav aria-label="Primary">
         <ul class="nav__links">
           <li><a href="#how" class="hide-mobile">How it works</a></li>
-          <li><a href="#features" class="hide-mobile">What it finds</a></li>
-          <li><a href="#wontdo" class="hide-mobile">What we won't do</a></li>
+          <li><a href="#features" class="hide-mobile">What it finds</a></li>            <li><a href="#more" class="hide-mobile">Move &amp; Organize</a></li>          <li><a href="#wontdo" class="hide-mobile">What we won't do</a></li>
           <li><a href="#download" class="btn btn--primary nav__cta">Free up space</a></li>
         </ul>
       </nav>
@@ -207,36 +206,7 @@
       </div>
     </section>
 
-    <!-- ============== §6.6 MORE THAN A CLEANER ============== -->
-    <section class="section section--tint">
-      <div class="container">
-        <div class="read">
-          <div class="eyebrow">More than a cleaner</div>
-          <h2>Clean is just the start.</h2>
-          <p class="lede">Once your space is clear, CirroGuide lets you move files between clouds and organize what stays — without touching a laptop. Included free for 3 months, then Premium.</p>
-        </div>
-        <div class="morethan__grid">
-          <div class="morethan__card">
-            <div class="badge--premium">★ Premium</div>
-            <h3>Move</h3>
-            <p>Transfer files between clouds — or between your phone and any cloud — without re-uploading. Google Drive full? Shift a year of videos to OneDrive in a tap. Photos → Google Drive, Google Drive → Phone, any direction.</p>
-            <div class="morethan__phone" aria-hidden="true">
-              <img src="./assets/screens/07_ios_move_wizard.png" alt="" loading="lazy" decoding="async" />
-            </div>
-          </div>
-          <div class="morethan__card">
-            <div class="badge--premium">★ Premium</div>
-            <h3>Organize</h3>
-            <p>Sort your cloud into folders that actually make sense. Auto-group by year, by month, or by file type — then preview the exact folder structure before anything moves. One tap to apply across all your clouds.</p>
-            <div class="morethan__phone" aria-hidden="true">
-              <img src="./assets/screens/09_ios_organize_detail.png" alt="" loading="lazy" decoding="async" />
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============== §6.5 BEFORE / AFTER ============== -->
+    <!-- ============== §6.5 BEFORE / AFTER (Clean proof) ============== -->
     <section class="section section--tint">
       <div class="container">
         <div class="read">
@@ -255,6 +225,52 @@
             <div class="compare__big">86.2 GB</div>
             <p>Of clutter you can review and free in one place</p>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== §6.6 MORE THAN A CLEANER ============== -->
+    <section class="section morethan" id="more">
+      <div class="container">
+        <div class="read">
+          <div class="eyebrow">More than a cleaner</div>
+          <h2>Clean is just the start.</h2>
+          <p class="lede">Once your space is clear, CirroGuide does two more things no cleaner does — move files between clouds, and auto-organize what stays. Both included free for 3 months, then Premium.</p>
+        </div>
+        <div class="morethan__grid">
+
+          <article class="morethan__card">
+            <div class="morethan__phone" aria-hidden="true">
+              <img src="./assets/screens/07_ios_move_wizard.png" alt="" loading="lazy" decoding="async" />
+            </div>
+            <div class="morethan__body">
+              <div class="badge--premium">Premium</div>
+              <h3>Move</h3>
+              <p>Transfer files between clouds without re-uploading. Google Drive full but OneDrive has space? Shift a year of videos in a tap.</p>
+              <ul class="morethan__chips">
+                <li>Phone → Cloud</li>
+                <li>Cloud → Cloud</li>
+                <li>Cloud → Phone</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="morethan__card">
+            <div class="morethan__phone" aria-hidden="true">
+              <img src="./assets/screens/09_ios_organize_detail.png" alt="" loading="lazy" decoding="async" />
+            </div>
+            <div class="morethan__body">
+              <div class="badge--premium">Premium</div>
+              <h3>Organize</h3>
+              <p>Sort your cloud into folders that make sense. Auto-group by year, month, or file type — preview the new structure, then apply with one tap.</p>
+              <ul class="morethan__chips">
+                <li>By Year</li>
+                <li>By Month</li>
+                <li>By File Type</li>
+              </ul>
+            </div>
+          </article>
+
         </div>
       </div>
     </section>

@@ -476,53 +476,97 @@ p  { margin: 0 0 var(--s-4); }
 :focus-visible { outline: 2px solid var(--green-600); outline-offset: 2px; }
 
 /* ---------- 19. Move + Organize (§6.6) ---------- */
+.morethan { background: var(--paper); }
+
 .morethan__grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--s-6);
-  margin-top: var(--s-8);
+  gap: var(--s-8);
+  margin-top: var(--s-12);
 }
-@media (min-width: 768px) { .morethan__grid { grid-template-columns: 1fr 1fr; gap: var(--s-8); } }
+@media (min-width: 880px) { .morethan__grid { grid-template-columns: 1fr 1fr; gap: var(--s-12); } }
 
 .morethan__card {
-  background: var(--ink-900);
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--s-6);
+  align-items: center;
+  background: var(--paper);
+  border: 1px solid var(--line);
   border-radius: var(--radius-lg);
-  padding: var(--s-8);
-  display: flex;
-  flex-direction: column;
-  gap: var(--s-4);
-  color: rgba(255,255,255,.85);
+  padding: var(--s-6);
+  box-shadow: var(--shadow-card);
+  transition: transform var(--motion), box-shadow var(--motion);
 }
-.morethan__card h3 { color: #fff; font-size: 24px; margin: 0; }
-.morethan__card p  { color: rgba(255,255,255,.75); margin: 0; font-size: var(--fs-lede); }
+.morethan__card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 1px 2px rgba(11,18,32,.06), 0 16px 40px rgba(11,18,32,.10);
+}
+
+.morethan__phone {
+  width: 140px;
+  aspect-ratio: 9 / 19.5;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #000;
+  box-shadow: var(--shadow-phone);
+  border: 1px solid rgba(11,18,32,.12);
+  flex-shrink: 0;
+}
+.morethan__phone img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.morethan__body { min-width: 0; }
+.morethan__body h3 {
+  font-size: 26px;
+  margin: var(--s-2) 0 var(--s-2);
+  letter-spacing: -0.015em;
+}
+.morethan__body p {
+  margin: 0 0 var(--s-4);
+  color: var(--ink-500);
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.morethan__chips {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+}
+.morethan__chips li {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  background: var(--paper-tint);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink-700);
+}
 
 .badge--premium {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
-  background: rgba(22,163,74,.15);
-  color: #34D399;
-  border: 1px solid rgba(52,211,153,.3);
+  background: var(--green-50);
+  color: var(--green-700);
+  border: 1px solid rgba(22,163,74,.25);
   border-radius: 999px;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 700;
-  letter-spacing: 0.07em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  padding: 3px 10px;
+  padding: 3px 9px;
   width: fit-content;
 }
 
-.morethan__phone {
-  border-radius: 24px;
-  overflow: hidden;
-  background: #000;
-  box-shadow: var(--shadow-phone);
-  border: 1px solid rgba(255,255,255,.08);
-  aspect-ratio: 9 / 19.5;
-  max-width: 220px;
-  margin-top: var(--s-2);
+@media (max-width: 540px) {
+  .morethan__card { grid-template-columns: 1fr; text-align: left; }
+  .morethan__phone { width: 120px; }
 }
-.morethan__phone img { width: 100%; height: 100%; object-fit: cover; }
 
 /* ---------- 20. Legal / prose pages ---------- */
 .legal-hero {
