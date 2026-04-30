@@ -222,6 +222,9 @@ p  { margin: 0 0 var(--s-4); }
   .phone--lift, .phone--lift2 { transform: none; }
 }
 
+/* OnePlace phone (desktop default) */
+.oneplace__phone { max-width: 360px; margin: 0 auto; }
+
 /* ---------- 7. Problem mirror (§2) ---------- */
 .problem ul {
   list-style: none;
@@ -617,10 +620,49 @@ p  { margin: 0 0 var(--s-4); }
   .hero__cta .btn { width: 100%; }                    /* ~ w-full */
   .btn { height: 48px; }                              /* ~ h-12 */
 
-  /* Hide secondary phones in hero — show only the primary one */
-  .phone--secondary { display: none; }
-  .phones { grid-template-columns: 1fr; gap: 0; max-width: 220px; margin: 0 auto; }
-  .phone--primary { transform: none; }
+  /* HERO phones: horizontal scroll-snap carousel on mobile.
+     Constrain by HEIGHT (not width) so phones stay portrait and short. */
+  .phones {
+    display: flex;
+    grid-template-columns: none;
+    gap: var(--s-3);
+    max-width: none;
+    width: auto;
+    margin: 0 calc(var(--s-4) * -1);     /* bleed to viewport edges */
+    padding: var(--s-2) var(--s-4) var(--s-4);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-left: var(--s-4);
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    align-items: stretch;
+  }
+  .phones::-webkit-scrollbar { display: none; }
+  .phone {
+    flex: 0 0 auto;
+    width: auto;
+    height: 260px;                       /* fixed mobile height */
+    max-height: 260px;
+    aspect-ratio: 9 / 19.5;              /* width derives from height ≈ 120px */
+    scroll-snap-align: center;
+  }
+  .phone--lift, .phone--lift2 { transform: none; }
+  /* Phantom spacer so last phone can scroll fully into view + center */
+  .phones::after {
+    content: "";
+    flex: 0 0 var(--s-4);
+  }
+
+  /* §6 OnePlace large image: supportive, not hero */
+  .oneplace__phone {
+    max-width: none;
+    width: auto;
+    height: 220px;                       /* ≈ 102px wide @ 9:19.5 */
+    max-height: 220px;
+    aspect-ratio: 9 / 19.5;
+    margin: var(--s-4) auto 0;
+    border-radius: 20px;
+  }
 
   /* Nav: hide ghost CTA height bump, keep brand + primary CTA */
   .nav__cta { height: 36px; padding: 0 var(--s-3); font-size: 13px; }

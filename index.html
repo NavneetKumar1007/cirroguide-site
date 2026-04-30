@@ -65,10 +65,10 @@
           <div class="phone phone--lift phone--primary">
             <img src="./assets/screens/01_home_scanning.png" alt="" loading="eager" decoding="async" />
           </div>
-          <div class="phone phone--lift2 phone--secondary">
+          <div class="phone phone--lift2">
             <img src="./assets/screens/03_ios_review_clean.png" alt="" loading="eager" decoding="async" />
           </div>
-          <div class="phone phone--lift phone--secondary">
+          <div class="phone phone--lift">
             <img src="./assets/screens/04_ios_confirm_trash.png" alt="" loading="lazy" decoding="async" />
           </div>
         </div>
@@ -200,7 +200,7 @@
             <li>OneDrive</li>
           </ul>
         </div>
-        <div class="phone" style="max-width: 360px; margin: 0 auto;">
+        <div class="phone oneplace__phone">
           <img src="./assets/screens/06_ios_large_files.png" alt="CirroGuide showing large files across Google Drive and other sources" loading="lazy" decoding="async" />
         </div>
       </div>
@@ -413,6 +413,33 @@
       }, { threshold: 0.05 });
       anchors.forEach(function (a) { obs.observe(a); });
       sticky.style.transition = 'opacity 200ms ease';
+    })();
+
+    // Subtle hero phone auto-scroll on mobile only.
+    // - 4s interval, smooth scroll, loops back to start
+    // - Pauses permanently on first user interaction
+    // - Respects prefers-reduced-motion and skips if not on mobile
+    (function () {
+      var track = document.querySelector('.phones');
+      if (!track) return;
+      var isMobile = window.matchMedia('(max-width: 640px)').matches;
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!isMobile || reduce) return;
+
+      var phones = track.querySelectorAll('.phone');
+      if (phones.length < 2) return;
+      var i = 0, paused = false;
+
+      function pause() { paused = true; }
+      track.addEventListener('touchstart', pause, { passive: true, once: true });
+      track.addEventListener('pointerdown', pause, { passive: true, once: true });
+      track.addEventListener('wheel', pause, { passive: true, once: true });
+
+      setInterval(function () {
+        if (paused) return;
+        i = (i + 1) % phones.length;
+        phones[i].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+      }, 4000);
     })();
   </script>
 </body>
