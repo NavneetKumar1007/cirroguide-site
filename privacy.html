@@ -46,7 +46,7 @@
       </section>
 
       <section class="container"><div class="prose">
-        <p><strong>Effective date:</strong> March 23, 2026</p>
+        <p><strong>Effective date:</strong> March 23, 2026 &nbsp;·&nbsp; <strong>Last updated:</strong> May 8, 2026</p>
 
         <h2>1. Information CirroGuide accesses</h2>
         <p>
@@ -56,8 +56,44 @@
           file sizes, modification times, file paths, provider account email,
           and provider-specific identifiers.
         </p>
+        <p>
+          On iPhone, CirroGuide accesses your Photos library only after you
+          explicitly grant permission. Photo and video metadata (and pixel data
+          for duplicate / blur detection) is read directly on your device.
+          Your photos are never uploaded to CirroGuide servers.
+        </p>
 
-        <h2>2. File content access</h2>
+        <h2>2. How CirroGuide accesses Google Drive</h2>
+        <p>
+          CirroGuide uses the minimum possible Google Drive permissions. It
+          requests only two scopes:
+        </p>
+        <ul>
+          <li><strong>drive.metadata.readonly</strong> — reads file names, sizes, modification dates, and folder structure to build your storage summary and find duplicates. This scope cannot modify or delete anything.</li>
+          <li><strong>drive.file</strong> — reads and deletes only the specific files you explicitly select. It cannot see or touch any other file in your Drive.</li>
+        </ul>
+        <p>
+          CirroGuide deliberately does not request unrestricted Drive access.
+          This means the app can only act on files you directly choose — it
+          cannot scan or modify your entire Drive without your involvement.
+        </p>
+        <p>
+          <strong>Every Google Drive deletion requires your explicit
+          confirmation.</strong> When you choose to delete files from Google
+          Drive, CirroGuide opens the official Google Drive Picker — Google's
+          own file-selection interface. You must select the files yourself in
+          the Picker before any deletion can proceed. CirroGuide cannot delete
+          Drive files silently or without that step.
+        </p>
+        <p>
+          The permissions you grant in the Picker are stored locally on your
+          device and are never shared with CirroGuide servers. If the app is
+          closed mid-cleanup, any unfinished deletions are saved locally and
+          offered for retry next time you open the app — your already-copied
+          files are always safe.
+        </p>
+
+        <h2>3. File content access</h2>
         <p>
           CirroGuide may access file content only when needed for features such
           as duplicate detection, hashing, or file preview. File previews and
@@ -65,7 +101,7 @@
           otherwise stated.
         </p>
 
-        <h2>3. What stays on your device</h2>
+        <h2>4. What stays on your device</h2>
         <p>
           Duplicate scan caches, preview files, temporary scan state, and
           device-local provider sessions are stored locally on your device.
@@ -73,7 +109,7 @@
           device.
         </p>
 
-        <h2>4. What may sync with your CirroGuide account</h2>
+        <h2>5. What may sync with your CirroGuide account</h2>
         <p>
           CirroGuide may sync lightweight account and dashboard metadata, such
           as your account profile, connected-provider summaries, reclaimed-space
@@ -81,30 +117,55 @@
           restore and account continuity.
         </p>
 
-        <h2>5. How your data is used</h2>
+        <h2>6. How your data is used</h2>
         <p>
           CirroGuide uses accessed data only to provide storage summaries,
           duplicate cleanup, previews, account sync, and related product
-          features. CirroGuide does not sell your personal data.
+          features. CirroGuide does not sell your personal data and does not
+          use your data for third-party advertising or cross-app tracking.
         </p>
 
-        <h2>6. Third-party services</h2>
+        <h2>7. Diagnostics, analytics, and performance data</h2>
         <p>
-          CirroGuide relies on third-party services such as Google Drive,
-          Dropbox, OneDrive, and Firebase. Your use of those services is also
-          subject to their own terms and privacy policies.
+          To keep CirroGuide reliable, the app collects limited diagnostic and
+          product-usage data via Google Firebase services (Crashlytics,
+          Analytics, Performance Monitoring, Remote Config). This data is linked
+          to your CirroGuide account identifier. No file content, file paths,
+          photo data, or cloud credentials are included in diagnostic reports.
+          Apple advertising identifier (IDFA) is not collected.
         </p>
 
-        <h2>7. Data retention</h2>
+        <h2>8. Authentication and purchase data</h2>
+        <p>
+          CirroGuide uses Sign in with Apple and Sign in with Google for
+          account creation and provider authentication. CirroGuide Pro
+          subscriptions are processed by the App Store (iOS) or Google Play
+          (Android); we receive only the receipt or purchase token needed to
+          confirm your entitlement and do not see your payment-method details.
+        </p>
+
+        <h2>9. Third-party services</h2>
+        <p>
+          CirroGuide relies on the third-party services listed below. Your use
+          of these services is also subject to their own terms and privacy
+          policies.
+        </p>
+        <ul>
+          <li>Google Drive, Dropbox, OneDrive, iCloud Drive (file access you authorize)</li>
+          <li>Google Firebase (Crashlytics, Analytics, Performance, Remote Config)</li>
+          <li>Google Sign-In, Sign in with Apple (authentication)</li>
+          <li>App Store (iOS) and Google Play Billing (subscriptions)</li>
+        </ul>
+
+        <h2>10. Data retention</h2>
         <p>
           Locally stored caches and temporary files remain on your device until
           they are cleared by the app, overwritten, or removed when you sign
           out. Synced account metadata may remain associated with your
-          CirroGuide account until you request deletion or the service is
-          updated to provide self-service account deletion tools.
+          CirroGuide account until you request deletion.
         </p>
 
-        <h2>8. Security</h2>
+        <h2>11. Security</h2>
         <p>
           CirroGuide uses platform and provider authentication flows and stores
           sensitive local session information using available device-secure
@@ -112,7 +173,7 @@
           you should use providers and devices you trust.
         </p>
 
-        <h2>9. Contact</h2>
+        <h2>12. Contact</h2>
         <p>
           If you have questions about this policy, contact
           <a href="mailto:support@cirroguide.com">support@cirroguide.com</a>.
